@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.err{
+			background-color: red;
+			border: 1px solid blue;
+			color: yellow;
+		}
+		.ok{
+			border: 1px solid yellow;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="tieude">thực<b> hành</b> JQ</h1>
+
+	<input type="text" name="username" placeholder="Username"><br>
+	<input type="password" name="pwd" placeholder="Password"><br>
+	<input type="password" name="pwd" placeholder="Password"><br>
+	<input type="email" name="email" placeholder="Email"><br>
+
+	<button>Đăng ký</button>
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready( function(){
+			 $('button').click(function(){
+			 	username = $('input[name=username]').val();
+			 	if(username.length==0){
+			 		// $('input[name=username]').css('backgrond-color','red');
+			 		// $('input[name=username]').css('border','1px red');
+			 		// $('input[name=username]').css('color','yellow');
+			 		$('input[name=username]').addClass('err');
+			 	}else{
+			 		$('input[name=username]').addClass('ok');
+			 		$('input[name=username]').removeClass('err');
+			 	}
+			 	$('#tieude').toggleClass('err');
+			 	$('input[name=username]').toggle();
+			 });
+		 });
+
+
+
+	</script>
+</body>
+</html>
